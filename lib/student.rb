@@ -18,12 +18,7 @@ class Student
 
   def add_student_attributes(attributes_hash)
     attributes_hash.each do |key, value|
-      @twitter = value if key.to_s == "twitter"
-      @linkedin = value if key.to_s == "linkedin"
-      @github = value if key.to_s == "github"
-      @blog = value if key.to_s == "blog"
-      @profile_quote = value if key.to_s == "profile_quote"
-      @bio = value if key.to_s == "bio"
+      self.send("#{key}=", value)
     end
   end
 
